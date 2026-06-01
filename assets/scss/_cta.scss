@@ -1,0 +1,346 @@
+.cta-section {
+    margin-top: -100px;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-wrapper {
+    .cta-left {
+        padding: 40px 50px;
+        background-color: $white;
+        box-shadow: $shadow;
+
+        @include breakpoint (max-lg){
+            padding: 30px 25px;
+        }
+
+        @include breakpoint (max-md){
+            text-align: center;
+            padding: 30px 30px;
+        }
+
+        h2 {
+            font-size: 90px;
+            color: $theme-color;
+
+            @include breakpoint (max-lg){
+                font-size: 56px;
+            }
+
+            @include breakpoint (max-md){
+                font-size: 48px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+
+            @include breakpoint (max-md){
+                font-size: 16px;
+            }
+        }
+    }
+
+    .cta-right {
+        box-shadow: $shadow;
+        background-color: $white;
+        padding: 60px;
+        position: relative;
+        @include flex;
+        justify-content: space-between;
+        z-index: 9;
+        height: 100%;
+        overflow: hidden;
+
+        @include breakpoint (max-lg){
+            padding: 45px 30px;
+            height: initial;
+        }
+
+        @include breakpoint (max-md){
+            flex-direction: column;
+            gap: 30px;
+            padding: 50px 30px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .shape-image {
+            background-image: url(../img/shape.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: top left;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: -2px;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+
+            @include breakpoint (max-xl){
+                left: -150px;
+            }
+
+            @include breakpoint (max-lg){
+                left: -100px;
+            }
+
+            @include breakpoint (max-md){
+                background-size: cover;
+                left: 0;
+            }
+        }
+
+        .cta-content {
+            @include breakpoint (max-md){
+                h3,span {
+                    color: $white;
+                }
+            }
+            span {
+                font-size: 18px;
+                color: $white;
+                font-weight: 500;
+
+                @include breakpoint (max-md){
+                    span {
+                        color: $white;
+                    }
+                }
+            }
+
+            h3 {
+                font-size: 26px;
+                color: $white;
+            }
+        }
+
+        .call-area {
+            @include breakpoint (max-md){
+                text-align: center;
+            }
+            p {
+                font-size: 18px;
+                margin-bottom: 5px;
+                text-align: right;
+
+                @include breakpoint (max-md){
+                    text-align: center;
+                    color: $white;
+                }
+
+            }
+
+            a {
+                font-size: 26px;
+                color: $header-color;
+                font-weight: 700;
+
+                @include breakpoint (max-md){
+                   color: $white;
+                }
+            }
+        }
+    }
+}
+
+.cta-section-2 {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+        @include before;
+        background-color: rgb(13, 6, 44);
+        opacity: 0.8;
+    }
+
+    .shape-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+    }
+
+    &.style-2 {
+        background-attachment: fixed;
+        
+       &::before {
+        opacity: 0.8;
+       }
+
+       .video-icon {
+            margin-top: 50px;
+            width: 140px;
+            height: 140px;
+            line-height: 140px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1px solid $white;
+            display: inline-block;
+            font-size: 22px;
+            color: $theme-color;
+
+            @include breakpoint (max-sm){
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+                margin-top: 30px;
+            }
+       }
+    }
+}
+
+.cta-wrapper-2 {
+    position: relative;
+
+    .cta-content {
+        margin: 0 auto;
+        text-align: center;
+
+        h2 {
+            color: $white;
+            font-size: 60px;
+
+            @include breakpoint (max-xl){
+                font-size: 52px;
+            }
+
+            @include breakpoint (max-lg){
+                font-size: 48px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 34px;
+            }
+        }
+    }
+}
+
+.cta-wrapper-3 {
+    @include flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 9;
+    
+    @include breakpoint (max-xl){
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        text-align: center;
+    }
+}
+
+.video-section {
+    position: relative;
+    padding: 230px 0;
+
+    &::before {
+        @include before;
+        background-color: rgb(0, 5, 28);
+        opacity: 0.8;
+    }
+
+    @include breakpoint (max-sm){
+      padding: 130px 0;
+    }
+
+    @include breakpoint (max-lg){
+        padding: 200px 0;
+    }
+}
+
+.video-box {
+    display: block;
+
+    .video-btn {
+        position: relative;
+        display: inline-block;
+        width: 140px;
+        height: 140px;
+        line-height: 150px;
+        font-size: 24px;
+        color: $white;
+        background-color: #ffffff26;
+        border-radius: 50%;
+
+        @include breakpoint (max-sm){
+            width: 100px;
+            height: 100px;
+            line-height: 110px;
+        }
+    }
+
+    .ripple {
+        &::before,&::after {
+            width: 140px;
+            height: 140px;
+
+            @include breakpoint (max-sm){
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+}
+
+.cta-wrapper-4 {
+    @include flex;
+    position: relative;
+    z-index: 9;
+
+    @include breakpoint (max-xl){
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .cta-content {
+        h2 {
+            font-size: 60px;
+            color: $white;
+
+            @include breakpoint (max-xxl){
+                font-size: 52px;
+            }
+
+            @include breakpoint (max-xl){
+                font-size: 48px;
+            }
+
+            @include breakpoint (max-lg){
+                font-size: 42px;
+            }
+
+            @include breakpoint (max-md){
+                font-size: 35px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 32px;
+            }
+        }
+    }
+}
+
+.cta-image {
+    img {
+        border-radius: 50px;
+    }
+}
+
+.cta-section-3 {
+    position: relative;
+    z-index: 1;
+    
+    &::before {
+        @include before;
+        background-image: $color-gradient-2;
+        opacity: 0.8;
+    }
+}

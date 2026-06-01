@@ -1,0 +1,66 @@
+.brand-wrapper {
+    .brand-image {
+        margin: 0 auto;
+        text-align: center;
+        padding: 30px 10px;
+        background-color: $bg-color;
+        filter: grayscale(100%);
+        @include transition;
+    
+        &:hover {
+            filter: initial;
+        }
+    }
+
+    &.style-2 {
+        .brand-image {
+            background-color: $white;
+            box-shadow: $shadow;
+        }
+    }
+
+    &.style-3 {
+        margin-bottom: 55px;
+
+        @include breakpoint (max-xxl){
+            margin-bottom: 30px;
+        }
+
+        @include breakpoint (max-xl){
+            margin-bottom: 0;
+        }
+        
+        .brand-image {
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0;
+        }
+    }
+    
+    .swiper-slide.swiper-slide-active{
+        .brand-image {
+            filter: initial;
+        }
+    }
+}
+
+.brand-section-2 {
+    position: relative; 
+
+    &::before {
+        @include before;
+        background-color: $bg-color;
+        top: 20%;
+    }
+}
+
+.brand-section-3 {
+    background-color: #1c1b23;
+    position: relative;
+
+    .layer-shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

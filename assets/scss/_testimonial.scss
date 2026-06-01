@@ -1,0 +1,246 @@
+.testimonial-section {
+    position: relative;
+
+    .left-shape {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        opacity: .9;
+        animation: top-image-bounce 3s infinite ease-in-out;
+    }
+
+    .right-shape {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+.testimonial-card-items {
+    background-color: $white;
+    padding: 40px;
+    position: relative;
+    margin-top: 30px;
+    display: inline-block;
+
+    &::before {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        content: '';
+        background-image: url(../../assets/img/client/shape.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 115px;
+        height: 160px;
+        filter: grayscale(100%);
+        @include transition;
+        opacity: .2;
+    }
+
+    .testimonial-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+
+    .icon {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        font-size: 48px;
+        @include transition;
+    }
+
+    .testimonial-content {
+        margin-top: 20px;
+        position: relative;
+        z-index: 9;
+
+        h4 {
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+    }
+
+    &:hover {
+        &::before {
+            filter: initial;
+            opacity: 1;
+        }
+
+        .icon {
+            color: $theme-color;
+        }
+    }
+
+    &.active {
+        &::before {
+            filter: initial;
+            opacity: 1;
+        }
+
+        .icon {
+            color: $theme-color;
+        }
+    }
+}
+
+.testimonial-section-2 {
+    position: relative;
+
+    .shape-left {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+    }
+
+    .right-shape {
+        position: absolute;
+        top: -37%;
+        right: 0;
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+    }
+}
+
+.testimonial-wrapper {
+    position: relative;
+    margin-bottom: 50px;
+
+    @include breakpoint (max-sm){
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .testimonial-items {
+        max-width: 580px;
+
+        @include breakpoint (max-sm){
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+
+            @include breakpoint (max-sm){
+                text-align: center;
+                margin: 0 auto 20px;
+            }
+        }
+
+        .testiminial-content {
+            p {
+                margin-bottom: 30px;
+
+                @include breakpoint (max-sm){
+                   margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    .array-button {
+        gap: 30px;
+        @include flex;
+        justify-content: end;
+
+        @include breakpoint (max-sm){
+            justify-content: center;
+        }
+
+
+    }
+}
+
+.testimonial-section-3 {
+    position: relative;
+
+    .shape-image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.testimonial-right {
+    width: 860px;
+
+    @include breakpoint (max-xxxl){
+        width: initial;
+        max-width: 860px;
+    }
+
+    .testimonial-card-items-2 {
+        .testimonial-content {
+            background-color: $white;
+            box-shadow: $shadow;
+            padding: 40px;
+            position: relative;
+            border-bottom: 4px solid $theme-color;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                content: '';
+                background-image: url(../../assets/img/client/shape-2.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 73px;
+                height: 101px;
+                filter: grayscale(100%);
+                @include transition;
+                opacity: .2;
+            }
+        }
+
+        .client-info {
+            @include flex;
+            gap: 20px;
+            margin-top: 30px;
+
+            .client-image {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+            }
+
+            .client-content {
+                h4 {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+
+        &:hover {
+            .testimonial-content {
+                &::before {
+                    filter: initial;
+                    opacity: 1;
+                }
+            }
+        }
+
+        &.active {
+            .testimonial-content {
+                &::before {
+                    filter: initial;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

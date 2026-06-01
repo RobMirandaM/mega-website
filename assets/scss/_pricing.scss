@@ -1,0 +1,146 @@
+.pricing-section {
+    position: relative;
+
+    .shape-image {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+
+        img {
+            @include imgw;
+        }
+
+        @include breakpoint (max-xxl){
+            display: none;
+        }
+    }
+}
+.single-pricing-items {
+    margin-top: 30px;
+    background-color: $bg-color;
+    padding: 15px;
+    border: 1px solid $border-color;
+    overflow: hidden;
+    position: relative;
+    @include transition;
+
+    .pricing-header {
+        padding: 45px;
+        background-color: $white;
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint (max-sm){
+            padding: 40px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+
+            sub {
+                font-size: 18px;
+                margin-left: -10px;
+            }
+        }
+
+        span {
+            font-size: 18px;
+            font-weight: 500;
+            color: $header-color;
+        }
+
+        .icon-area {
+           position: relative;
+           margin-top: 40px;
+
+           img {
+              transition: all 500ms ease;
+           }
+
+           @include breakpoint (max-sm){
+                margin-top: 20px;
+            }
+
+            .content {
+                background-color: $white;
+                box-shadow: $shadow;
+                text-align: center;
+                padding: 5px 15px;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    ul {
+        padding: 40px 45px 50px;
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint (max-sm){
+            padding: 40px 40px 30px;
+        }
+
+        li {
+            position: relative;
+
+            &:not(:last-child){
+                margin-bottom: 10px;
+            }
+
+            i {
+                color: $theme-color;
+                margin-right: 5px;
+            }
+        }
+
+        .last-list {
+            opacity: 0;
+
+            @include breakpoint (max-xxl){
+                opacity: 1;
+            }
+        }
+    }
+
+    .pricing-button {
+        padding: 0 45px 50px;
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint (max-sm){
+            padding: 0 40px 40px;
+        }
+    }
+
+    &.active {
+        border: 1px solid $theme-color;
+    }
+
+    .shape-image {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 1;
+
+       img {
+          @include imgw;
+       }
+    }
+
+    &:hover {
+        transform: translateY(-15px);
+
+        .pricing-header {
+            .icon-area {
+                img {
+                    transform: scaleX(-1);
+                }
+            }
+        }
+    }
+}

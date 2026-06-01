@@ -1,0 +1,188 @@
+.footer-section {
+    position: relative;
+
+    &.style-2 {
+        position: relative;
+
+        &::before {
+            @include before;
+            background-color: rgb(0, 5, 28);
+            opacity: 0.9;
+        }
+    }
+}
+
+.footer-widgets-wrapper {
+    padding: 90px 0 120px;
+    position: relative;
+    z-index: 9;
+
+    @include breakpoint(max-xl){
+        padding: 60px 0 90px;
+    }
+
+    @include breakpoint(max-lg){
+        padding: 50px 0 70px;
+    }
+
+    .single-footer-widget {
+        margin-top: 30px;
+
+        .widget-head {
+            margin-bottom: 30px;
+
+            @include breakpoint (max-sm){
+               margin-bottom: 20px;
+            }
+
+            h3 {
+                text-transform: capitalize;
+                color: $white;
+            }
+        }
+
+        .footer-content {
+            p {
+                color: $text-color-2;
+            }
+
+            h6 {
+                margin-top: 20px;
+                a {
+                    color: $text-color-2;
+                }
+            }
+
+            .social-icon {
+                margin-top: 40px;
+                gap: 15px;
+                position: relative;
+                z-index: 9;
+
+                @include breakpoint (max-sm){
+                    margin-top: 20px;
+                }
+    
+                a {
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    font-size: 16px;
+                    display: block;
+                    background: rgba(92, 92, 91, .1);
+                    color: $text-color-2;
+                    border-radius: 50%;
+                    -webkit-transition: all .4s ease-in-out;
+                    transition: all .4s ease-in-out;
+                    text-align: center;
+    
+                    &:hover {
+                        background-color: $theme-color;
+                        color: $white;
+                    }
+                }
+            }
+
+            .footer-input {
+                position: relative;
+                margin-bottom: 25px;
+
+                input {
+                    width: 100%;
+                    border: none;
+                    background-color: transparent;
+                    color: $text-color-2;
+                    position: relative;
+                    border-bottom: 1px solid $border-color-2;
+                    padding-bottom: 20px;
+
+                    &::placeholder {
+                        color: $text-color-2;
+                    }
+                }
+
+                .newsletter-button {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    color: $theme-color;
+                }
+            }
+        }
+
+        .list-area {
+            li {
+                font-weight: 500;
+                &:not(:last-child){
+                    margin-bottom: 15px;
+                }
+
+                a {
+                    color: $text-color-2;
+                    position: relative;
+
+                    &::before {
+                        position: absolute;
+                        top: 8px;
+                        left: 0;
+                        width: 6px;
+                        height: 6px;
+                        content: "";
+                        border-radius: 50%;
+                        background-color: $theme-color;
+                        opacity: 0;
+                        visibility: hidden;
+                        @include transition;
+                    }
+
+                    &:hover {
+                        padding-left: 20px;
+                        color: $theme-color;
+
+                       &::before {
+                         opacity: 1;
+                         visibility: visible;
+                       }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.footer-bottom {
+    padding: 35px 0;
+    border-top: 1px solid #363d61;
+    position: relative;
+    z-index: 9;
+    
+    .footer-bottom-wrapper {
+        @include flex;
+        justify-content: space-between;
+        @include breakpoint (max-sm){
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            text-align: center;
+        }
+
+        p {
+            color: $text-color-2;
+
+            a {
+               color: $text-color-2;
+
+               &:hover {
+                color: $theme-color;
+               }
+            }
+        }
+    
+    }
+
+}
+
+  
+  
