@@ -38,7 +38,7 @@ gsap.ticker.lagSmoothing(0);
    CONFIG
 ===================================================== */
 
-const frameCount = 210;
+const frameCount = 70;
 /* const midFrame = Math.floor(frameCount / 2); */
 const midFrame = Math.floor(frameCount * 0.25);
 
@@ -92,8 +92,15 @@ for (let i = 0; i < frameCount; i++) {
 
   const img = new Image();
 
-  img.src =
-    `./assets/frames/frame_${String(i + 1).padStart(4, "0")}.jpg`;
+/* Borrar para anterior */
+  const realFrame = (i * 3) + 1;
+
+img.src =
+  `./assets/frames/comp/frame_${String(realFrame).padStart(4, "0")}.webp`;
+
+
+/*   img.src =
+    `./assets/frames/frame_${String(i + 1).padStart(4, "0")}.jpg`; */
 
   images.push(img);
 
@@ -191,7 +198,7 @@ gsap.to(seq, {
 
     start: "top top",
 
-    end: "+=1200",
+    end: "+=800",
 
     scrub: 0.6,
 

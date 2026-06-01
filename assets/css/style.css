@@ -681,3 +681,13 @@ html.lenis body {
   font-size: 2em;
  }
 }
+
+#hero-canvas {
+
+    filter:
+        contrast(1.04)
+        saturate(1.05)
+        brightness(1.02);
+
+}
+
